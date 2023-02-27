@@ -5,7 +5,7 @@ public class Ufospiel{
     private GLTastatur tastatur;
     private GLHimmel himmel;
 
-    private Ufo dasUfo;
+    private Ufo Ufo;
     private Asteroid asteroid1,asteroid2,asteroid3;
     //[...]
 
@@ -16,7 +16,7 @@ public class Ufospiel{
         tastatur = new GLTastatur();
         himmel = new GLHimmel("src/img/Sterne.jpg");
 
-        dasUfo = new Ufo();
+        Ufo = new Ufo();
 
         asteroid1 = new Asteroid();
         //[...]
@@ -27,7 +27,16 @@ public class Ufospiel{
     public void fuehreAus(){
         while(!tastatur.esc()){           
             asteroid1.bewegeDich();
-            //[...]
+
+
+           if (tastatur.links() && Ufo.gibX() > -700)
+               Ufo.bewegelinks();
+            if (tastatur.rechts()&& Ufo.gibX() < 700)
+                Ufo.bewegerechts();
+            if (tastatur.oben()&& Ufo.gibY() < 700)
+                Ufo.bewegehoch();
+            if (tastatur.unten()&& Ufo.gibY() > -200)
+                Ufo.bewegerunter();
 
             Sys.warte();
         }
