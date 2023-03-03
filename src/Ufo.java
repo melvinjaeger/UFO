@@ -31,8 +31,16 @@ public class Ufo{
 
 
     public void explodiere(){
+  double z = Math.random();
+  for (int i=0; i< 2000; i++) {
+      Ufo.verschiebe(-z, z, z);
+      Ufo.drehe(-z, z, z);
+      Sys.warte();
+  }
+Sys.beenden();
 
-    }
+  }
+
 
 
     public double gibX() {

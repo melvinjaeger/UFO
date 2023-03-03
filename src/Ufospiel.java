@@ -38,6 +38,12 @@ public class Ufospiel{
             if (tastatur.unten()&& Ufo.gibY() > -200)
                 Ufo.bewegerunter();
 
+            if  (asteroid1.gibY() <-400)
+               asteroid1.respawn();
+
+
+
+
             Sys.warte();
         }
         Sys.beenden(); 

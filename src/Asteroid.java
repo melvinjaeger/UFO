@@ -4,24 +4,29 @@ public class Asteroid{
 
 
     public Asteroid() {
-        kugel = new GLKugel(0, 1000, 0, 50, "src/img/Krater.jpg");
 
-        kugel2 = new GLKugel(-400, 1000, 0, 50, "src/img/Krater.jpg");
+        kugel = new GLKugel(Math.random()*500, 700+Math.random()*1000 , 0, 30+Math.random()*60 , "src/img/Krater.jpg");
 
-        kugel3 = new GLKugel(400, 1000, 0, 50, "src/img/Krater.jpg");
+
+
+
+
     }
 
     public void bewegeDich(){
-        kugel.verschiebe(0,-0.5,0);
+        kugel.verschiebe(0,-1,0);
 
 
-
-            kugel2.verschiebe(0,-0.5,0);
-
-
-
-                kugel3.verschiebe(0,-0.5,0);
             }
+    public double gibY() {
+        return kugel.gibY();
+    }
+
+
+    public void respawn() {
+        kugel.verschiebe(0+Math.random() * 500 *-500, 700 + Math.random() * 1000,  0);
+    }
+
 
 
 }
