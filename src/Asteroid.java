@@ -5,7 +5,7 @@ public class Asteroid{
 
     public Asteroid() {
 
-        kugel = new GLKugel(Math.random()*500, 700+Math.random()*1000 , 0, 30+Math.random()*60 , "src/img/Krater.jpg");
+        kugel = new GLKugel(Math.random()*500, 1000+Math.random()*1000 , 0, 30+Math.random()*60 , "src/img/Krater.jpg");
 
 
 
@@ -24,7 +24,7 @@ public class Asteroid{
 
 
     public void respawn() {
-        kugel.verschiebe(0+Math.random() * 500 *-500, 700 + Math.random() * 1000,  0);
+        kugel.verschiebe(0+Math.random() * 500 *-500, 1700 + Math.random() * 500,  0);
     }
 
 

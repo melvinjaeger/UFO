@@ -10,8 +10,9 @@ public class Ufospiel{
     //[...]
 
     public Ufospiel(){
-        kamera = new GLSchwenkkamera(800,600);  
-        kamera.verschiebe(0,200,500);
+        kamera = new GLSchwenkkamera(1920,1020);
+        kamera.verschiebe(0,-300,-300);
+        kamera.setzeBlickpunkt(0,0,150);
         licht  = new GLLicht();
         tastatur = new GLTastatur();
         himmel = new GLHimmel("src/img/Sterne.jpg");
