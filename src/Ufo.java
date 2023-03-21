@@ -37,17 +37,26 @@ public class Ufo{
   }
 Sys.beenden();
 
+
+
   }
+
+
+
+
+
 
 
 
     public double gibX() {
         return Ufo.gibX();
     }
-        public double gibY(){
-            return Ufo.gibY();
+    public double gibY(){
+        return Ufo.gibY();
     }
 
-
+    public double gibZ() {
+        return Ufo.gibZ();
+    }
 
 }
