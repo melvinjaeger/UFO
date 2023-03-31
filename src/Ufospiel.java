@@ -6,12 +6,13 @@ public class Ufospiel{
     private GLHimmel himmel;
 
     private Ufo Ufo;
-    private Asteroid asteroid1;
-    //[...]
+    private Asteroid[] asteroiden;
+
+
 
     public Ufospiel(){
         kamera = new GLSchwenkkamera(1920,1020);
-        kamera.verschiebe(0,-300,-300);
+        kamera.verschiebe(0,-350,-300);
         kamera.setzeBlickpunkt(0,0,150);
         licht  = new GLLicht();
         tastatur = new GLTastatur();
@@ -19,9 +20,12 @@ public class Ufospiel{
 
         Ufo = new Ufo();
 
-        asteroid1 = new Asteroid();
-        //[...]
 
+        asteroiden = new  Asteroid[500];
+
+        for (int i=0;i <asteroiden.length;i++) {
+            asteroiden[i] = new Asteroid();
+        }
 
 
 
@@ -34,7 +38,7 @@ public class Ufospiel{
     }
     public void fuehreAus(){
         while(!tastatur.esc()){           
-            asteroid1.bewegeDich();
+
 
 
            if (tastatur.links() && Ufo.gibX() > -400)
@@ -43,17 +47,21 @@ public class Ufospiel{
                 Ufo.bewegerechts();
             if (tastatur.oben()&& Ufo.gibZ() < 300)
                 Ufo.bewegehoch();
-            if (tastatur.unten()&& Ufo.gibZ() > 0)
+            if (tastatur.unten()&& Ufo.gibZ() > -50)
                 Ufo.bewegerunter();
 
-            if  (asteroid1.gibY() <-400)
-               asteroid1.respawn();
+            for (int i=0;i <asteroiden.length;i++) {
+                asteroiden[i].bewegeDich(20);
+                if (asteroiden[i].gibY() < -1000){
+                    asteroiden[i].respawn();
+                }
+            }
 
 
 
 
             Sys.warte();
         }
-        Sys.beenden(); 
+        Sys.beenden();
     }
 }

@@ -4,7 +4,7 @@ public class Ufo{
 
 
     public Ufo(){
-        Ufo = new GLTorus(0,50,-20,30,10);
+        Ufo = new GLTorus(0,50,-20,1,20);
         Ufo.skaliere (0.5,1,0.4);
         Ufo.setzeQualitaet(24);
 

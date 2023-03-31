@@ -7,7 +7,7 @@ public Ufo Ufo;
 
     public Asteroid() {
 
-        kugel = new GLKugel (-500+Math.random()*1000, 2000+Math.random()*1000 , 0+Math.random()*300, 30+Math.random()*60 , "src/img/Krater.jpg");
+        kugel = new GLKugel (-1000+Math.random()*2000, 2000+Math.random()*1000 , -300+Math.random()*800, 30+Math.random()*60 , "src/img/Krater.jpg");
 
 
 
@@ -34,33 +34,8 @@ public Ufo Ufo;
 
 
 
-
-
-
-
-
-
-
-
-    public void bewegeDich(){
-        kugel.verschiebe(0,-1,0);
-        if (getroffen()) {
-            Ufo.explodiere();
-        }
-            }
-
-    public boolean getroffen() {
-        double abstand = Math.sqrt(Math.pow(kugel.gibX() - Ufo.gibX(),2)+ Math.pow(kugel.gibY() - Ufo.gibY(),2)+ Math.pow(kugel.gibZ() - Ufo.gibZ(),2));
-
-        if (abstand < 50 ) {
-            return true;
-        }
-        else{
-            return false;
-
-
-        }
-
+    public void bewegeDich(double speed) {
+        kugel.verschiebe(0, 0 * speed, 0);
     }
 
 
@@ -70,11 +45,8 @@ public Ufo Ufo;
 
 
 
-
-
-
     public void respawn() {
-        kugel.setzePosition(-500+Math.random()*1000 , 2000+ Math.random() *1000,  0+Math.random() *300);
+        kugel.setzePosition(-500+Math.random()*1000 , 1000+ Math.random() *1000,  -100+Math.random() *300);
     }
 
 
