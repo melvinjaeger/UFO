@@ -10,18 +10,18 @@ public class Ufo{
 
     }
  
-    public void bewegelinks() {Ufo.verschiebe( -1,0,0);    }
+    public void bewegelinks(double speed) {Ufo.verschiebe( -1* speed,0,0);    }
 
-    public void bewegerechts(){
-        Ufo.verschiebe( 1,0,0);
+    public void bewegerechts(double speed){
+        Ufo.verschiebe( 1* speed,0,0);
     }
 
-    public void bewegerunter() {
-        Ufo.verschiebe(0, 0, -1);
+    public void bewegerunter(double speed) {
+        Ufo.verschiebe(0, 0, -1* speed);
     }
 
-    public void bewegehoch() {
-            Ufo.verschiebe(0, 0, 1);
+    public void bewegehoch(double speed) {
+            Ufo.verschiebe(0, 0, 1* speed);
         }
 
 

@@ -21,10 +21,11 @@ public class Ufospiel{
         Ufo = new Ufo();
 
 
-        asteroiden = new  Asteroid[500];
+        asteroiden = new  Asteroid[200];
 
         for (int i=0;i <asteroiden.length;i++) {
             asteroiden[i] = new Asteroid();
+
         }
 
 
@@ -42,16 +43,16 @@ public class Ufospiel{
 
 
            if (tastatur.links() && Ufo.gibX() > -400)
-               Ufo.bewegelinks();
+               Ufo.bewegelinks(0.7);
             if (tastatur.rechts()&& Ufo.gibX() < 400)
-                Ufo.bewegerechts();
+                Ufo.bewegerechts(0.7);
             if (tastatur.oben()&& Ufo.gibZ() < 300)
-                Ufo.bewegehoch();
+                Ufo.bewegehoch(0.7);
             if (tastatur.unten()&& Ufo.gibZ() > -50)
-                Ufo.bewegerunter();
+                Ufo.bewegerunter(0.7);
 
             for (int i=0;i <asteroiden.length;i++) {
-                asteroiden[i].bewegeDich(20);
+                asteroiden[i].bewegeDich(2);
                 if (asteroiden[i].gibY() < -1000){
                     asteroiden[i].respawn();
                 }
