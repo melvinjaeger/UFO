@@ -28,14 +28,18 @@ public Ufo Ufo;
         return kugel.gibZ();
     }
 
-
-
-
-
-
-
-    public void bewegeDich(double speed) {
-        kugel.verschiebe(0, -1 * speed, 0);
+    public boolean getroffen() {
+        double abstand = Math.sqrt(
+                        Math.pow(this.gibX() - Ufo.gibX(), 2) +
+                        Math.pow(this.gibY() - Ufo.gibY(), 2) +
+                        Math.pow(this.gibZ() - Ufo.gibZ(), 2)
+        );
+        if (abstand < 70) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 

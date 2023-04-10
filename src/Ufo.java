@@ -3,6 +3,7 @@ public class Ufo{
     private GLTorus Ufo;
 
 
+
     public Ufo(){
         Ufo = new GLTorus(0,50,-20,1,20);
         Ufo.skaliere (0.5,1,0.4);
@@ -10,7 +11,9 @@ public class Ufo{
 
     }
  
-    public void bewegelinks(double speed) {Ufo.verschiebe( -1* speed,0,0);    }
+    public void bewegelinks(double speed){
+        Ufo.verschiebe( -1* speed,0,0);
+    }
 
     public void bewegerechts(double speed){
         Ufo.verschiebe( 1* speed,0,0);
@@ -25,13 +28,13 @@ public class Ufo{
         }
 
 
-
+    public void setzeDrehung(double x,double y,double z){ Ufo.setzeDrehung(x,y,z);}
 
 
     public void explodiere(){
   double z = Math.random();
   for (int i=0; i< 2000; i++) {
-      Ufo.verschiebe(-z, z, z);
+      Ufo.verschiebe(-z, z, -z);
       Ufo.drehe(-z, z, z);
       Sys.warte();
   }
@@ -40,12 +43,6 @@ Sys.beenden();
 
 
   }
-
-
-
-
-
-
 
 
     public double gibX() {
