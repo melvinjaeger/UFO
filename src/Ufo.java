@@ -48,6 +48,7 @@ Sys.beenden();
     public double gibX() {
         return Ufo.gibX();
     }
+
     public double gibY(){
         return Ufo.gibY();
     }
