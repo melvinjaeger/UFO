@@ -1,11 +1,13 @@
 import GLOOP.*;
 public class Ufo{
     private GLTorus Ufo;
-    public Ufospiel ufospiel;
+
+
+
 
 
     public Ufo(){
-        Ufo = new GLTorus(0,0,100,2,30);
+        Ufo = new GLTorus(0,0,100,2,30,"src/img/Ufofarbe.jpg");
         Ufo.skaliere (0.5,1,0.4);
         Ufo.setzeQualitaet(50);
 
@@ -36,6 +38,7 @@ public class Ufo{
     }
 
     public void setzeDrehung(double x,double y,double z){ Ufo.setzeDrehung(x,y,z);}
+
 
 
 

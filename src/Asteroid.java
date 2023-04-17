@@ -12,7 +12,7 @@ public Ufo Ufo;
 
     }
     public void bewegeDich(double speed) {
-        kugel.verschiebe(0, -1 * speed, 0);
+        kugel.verschiebe(0,  -1-speed * 0.0003, 0);
         kugel.drehe(4.1, 2.1, 3.1);
         if (getroffen()) {
             Ufo.explodiere();
