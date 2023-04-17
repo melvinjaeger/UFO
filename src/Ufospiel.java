@@ -116,7 +116,7 @@ public class Ufospiel {
                     asteroiden[i].respawn();
                     zahl = zahl + 1;
                     if (x < 3000){x = x+1;}
-                    //
+
 
                 }
 
